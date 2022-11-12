@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const {renderer, scene, camera} = mindarThree;
 
-    const video = await loadVideo("/8circles.mov");
+    const video = await loadVideo("./8circles.mov");
     const texture = new THREE.VideoTexture(video);
 
     const geometry = new THREE.PlaneGeometry(1, 204/480);
