@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
       container: document.body,
       imageTargetSrc: './targets.mind',
     });
+
     const {renderer, scene, camera} = mindarThree;
 
     const video = await loadVideo("./8circles.mov");
     const texture = new THREE.VideoTexture(video);
 
-    const geometry = new THREE.PlaneGeometry(1, 204/480);
+    const geometry = new THREE.PlaneGeometry(1, 280/480);
     const material = new THREE.MeshBasicMaterial({map: texture});
     const plane = new THREE.Mesh(geometry, material);
 
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       video.pause();
     }
     video.addEventListener( 'play', () => {
-      video.currentTime = 6;
+      video.currentTime = 1;
     });
 
     await mindarThree.start();
